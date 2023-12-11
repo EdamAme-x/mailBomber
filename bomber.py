@@ -43,6 +43,7 @@ try:
         mail = smtplib.SMTP(str(host),int(port))
         mail.ehlo()
         mail.starttls()
+        print(f"LOGIN: {email}:{password}")
         mail.login(str(email),str(password))
         for j in range(0, counter):
             mail.sendmail(str(email),str(bomb_email),str(message))
